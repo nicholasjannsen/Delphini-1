@@ -239,17 +239,6 @@ class Delphini_Photometry(object):
             star_img = (CC_star<=1)*grid            # Star images
             star_val = star_img[nonzero(star_img)]  # Stellar pixels
             n_pix_star = len(star_val)              # Number of pixels in circle
-
-            # Local background initial:
-            # if background=='local':
-            #     CC_sky   = sqrt(xx**2 + yy**2) - a_sky
-            #     C_sky    = ((CC_star>1)*(CC_sky<1))*grid   # Sky background determined by width q
-            #     sky      = C_sky[nonzero(C_sky)]
-            #     flux_sky = 3*median(sky) - 2*mean(sky)     # Robust sky background flux
-            #     sky_true = zeros((b, self.h, self.w))      # Used in loop
-            #     print flux_sky
-            #     FITS(C_sky, 'linear', 2); plt.show()
-            #     sys.exit()
                 
             # Loop-step in x or y depends on phi:
             # Step in x and finds y centroid for each step:
@@ -267,7 +256,7 @@ class Delphini_Photometry(object):
             x_cen = zeros(b)
             y_cen = zeros(b)
             star_true = zeros((b, self.h, self.w))
-            sky_true  = zeros((b, self.h, self.w))    # Used in loop
+            sky_true  = zeros((b, self.h, self.w))
             for i in range(b):
                 # Find Center Of Flux (COF):
                 y_cen[i], x_cen[i] = self.center_of_flux(star_img, n_pix_star)
@@ -307,12 +296,6 @@ class Delphini_Photometry(object):
                 plot_ellipse(a,     b,     math.degrees(phi), x, y, 'g')  # Stellar aperture
                 plot_ellipse(a_sky, b_sky, math.degrees(phi), x, y, 'm')  # Background aperture
                 plt.show()
-            # Box aperture with local background:
-            if aperture[0]=='box':
-                 import matplotlib.patches as patches
-                 FITS(BB_star, 'linear', 2); plt.show()
-                 FITS(B_star, 'linear', 2)
-                 plt.show()
             # Box aperture with local background:
             if aperture[0]=='trace':
                  t = linspace(0, 2*pi)
