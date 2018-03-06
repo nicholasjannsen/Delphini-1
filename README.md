@@ -6,7 +6,7 @@ Software for the first AUSAT: Delphini-1. This software includes image reduction
 # Software descriptio. 
 To explain the software in more detail we here present the results from it. The following code assumes that all data is placed  placed in the same folder, and the science, flat, bias, and dark frames are likewise called so (you can call them whatever you wnat you want, just remember to change the nmaes of the input files). The file 'test.py' can be used to make an easy test of the software. The following code example illustartes the usage:
 
-`
+```
 from DELPHINI import DELPHINI
 path = '/path/to/data/'
 # Call class
@@ -24,7 +24,8 @@ XX.aperture_photometry(x_coor, y_coor, ['ellipse', 6, 48, 8, 172], 'local')
 x_coor = [107,  165,  49, 176]
 y_coor = [103,   55, 176, 212]
 XX.aperture_photometry(x_coor, y_coor, ['trace', 3, 78, 8, 172], 'local')
-`
+```
+
 The following explains teh above given code:
 
     - For the photometry software the first 2 entries in 'aperture_photometry' are the stellar coordinates. The next entry is the     "aperture" entry that takes 5 arguments: ['aperture', a, b, q, phi]. Here 'aperture' is either 'ellipse' or 'trace' corresponding to the two apertures. Because we are working with startrails, 'phi' is a tilt angle of the aperture between 0-180 degrees defined by the zero-point of the unit circle (hence counter clockwise from first quadrant). 
