@@ -1,7 +1,7 @@
 # Delphini-1
 Software for the first AUSAT: Delphini-1. This software includes image reduction and aperture photometry code.
 
-# Software descriptio. 
+# Software description 
 To explain the software in more detail we here present the results from it. The following code assumes that all data is placed in the same folder, and the science, flat, bias, and dark frames are likewise called so (you can call them whatever you wnat, just remember to change the names of the input files). The file 'test.py' can be used to make an easy test of the software. The following code example illustartes the usage:
 
 ```
