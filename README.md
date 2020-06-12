@@ -1,7 +1,8 @@
 # Delphini-1
 Software for the first AUSAT: Delphini-1. This software includes image reduction and aperture photometry code.
 
-# Software description 
+Software description
+---
 To explain the software in more detail we here present the results from it. The following code assumes that all data is placed in the same folder, and the science, flat, bias, and dark frames are likewise called so (you can call them whatever you wnat, just remember to change the names of the input files). The file 'test.py' can be used to make an easy test of the software. The following code example illustartes the usage:
 
 ```
@@ -39,12 +40,13 @@ For each pixel step in the x,y direction the opposite y,x pixel coordinate is de
 
 The third argument for the utility "aperture_photometry" is if a local or global sky background flux should be used to correct the stellar flux. As mentioned above the local sky background flux is define by a band of width "q" around the stellar aperture. As the factor of stellar contamination and crowding is very hard to predict for our mission, the sky background flux can also be determined globally. This is done simply by slicing the image into s number of subframes. Inside each subframe n number of pixels having the lowest flux is found, hence, s*n is the total number of sky background pixels and the robust 3*median(sky-pixels)-2*mean(sky-pixels) value of the s*n number of pixels with lowest flux is then the sky background flux. When a high level of vignetting or other image artifacts is present the local sky background flux should be used. Also, the global sky background routine do not work for all subframes at the moment. 
 
+Output
+---
 
-# Output
 
 
-
-# Usage and dependencies
+Usage and dependencies
+---
 Delphini-1 has been succesfully tested with python2.7 on Linux systems.
 
 Some python packages need to be installed:
