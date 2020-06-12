@@ -42,8 +42,7 @@ The third argument for the utility "aperture_photometry" is if a local or global
 
 Output
 ---
-
-
+All in all the aperture photometry pipline returns stellar flux and SNR for all stars that assigned a coordinate to it. For several code runs with different apertures, it is evident that the trace aperture provides a much higher SNR compared to the elliptic aperture. This is at least very intuitive because the trace aperture is much better to only in-close the star.
 
 Usage and dependencies
 ---
